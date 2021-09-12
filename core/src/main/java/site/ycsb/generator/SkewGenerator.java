@@ -19,11 +19,14 @@ package site.ycsb.generator;
 
 import java.util.concurrent.ThreadLocalRandom;
 
+/**
+ * Roll Twice, Pick Better.
+ */
 public class SkewGenerator extends NumberGenerator {
   private final long lb, ub, interval;
 
   /**
-   * Roll Twice, Pick Better
+   * Roll Twice, Pick Better.
    */
   public SkewGenerator(long lb, long ub) {
     this.lb = lb;
@@ -31,6 +34,9 @@ public class SkewGenerator extends NumberGenerator {
     interval = this.ub - this.lb + 1;
   }
 
+  /**
+   * Roll Twice, Pick Better.
+   */
   @Override
   public Number nextValue() {
     //Roll Twice, Pick Better
@@ -46,6 +52,9 @@ public class SkewGenerator extends NumberGenerator {
     }
   }
 
+  /**
+   * Roll Twice, Pick Better.
+   */
   @Override
   public double mean() {
     throw new UnsupportedOperationException("Can't compute mean of non-stationary distribution!");

@@ -491,6 +491,8 @@ public class CoreWorkload extends Workload {
     transactioninsertkeysequence = new AcknowledgedCounterGenerator(recordcount);
     if (requestdistrib.compareTo("uniform") == 0) {
       keychooser = new UniformLongGenerator(insertstart, insertstart + insertcount - 1);
+    } else if(requestdistrib.compareTo("skew") == 0) {
+      keychooser = new SkewGenerator(insertstart, insertstart + insertcount - 1);
     } else if (requestdistrib.compareTo("exponential") == 0) {
       double percentile = Double.parseDouble(p.getProperty(
           ExponentialGenerator.EXPONENTIAL_PERCENTILE_PROPERTY,

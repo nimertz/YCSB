@@ -492,6 +492,7 @@ public class CoreWorkload extends Workload {
     if (requestdistrib.compareTo("uniform") == 0) {
       keychooser = new UniformLongGenerator(insertstart, insertstart + insertcount - 1);
     } else if(requestdistrib.compareTo("skew") == 0) {
+      System.out.println("Skew generator being used");
       keychooser = new SkewGenerator(insertstart, insertstart + insertcount - 1);
     } else if (requestdistrib.compareTo("exponential") == 0) {
       double percentile = Double.parseDouble(p.getProperty(
